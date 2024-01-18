@@ -11,13 +11,13 @@ dotenv \
 yarn svg:build-sprite
 echo ""
 
-# -v NEXT_PUBLIC_GIT_COMMIT_SHA=$(git rev-parse --short HEAD) \
-# -v NEXT_PUBLIC_GIT_TAG=$(git describe --tags --abbrev=0) \
+  # -v NEXT_PUBLIC_GIT_COMMIT_SHA=f00ec38f \
+  # -v NEXT_PUBLIC_GIT_TAG=v1.21.2 \
 
 # generate envs.js file and run the app
 dotenv \
-  -v NEXT_PUBLIC_GIT_COMMIT_SHA=f00ec38f \
-  -v NEXT_PUBLIC_GIT_TAG=v1.21.2 \
+  -v NEXT_PUBLIC_GIT_COMMIT_SHA=$(git rev-parse --short HEAD) \
+  -v NEXT_PUBLIC_GIT_TAG=$(git describe --tags --abbrev=0) \
   -e .env.secrets \
   -e .env.development.local \
   -e .env.local \
